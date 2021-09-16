@@ -1,0 +1,6 @@
+{REPLACE "; layer 2\n" "; layer 2\nM221 S100\n"};
+
+Antonio Guardia, [08.12.19 16:23]
+{REPLACE "; layer" "M117 Layer"}
+{REPLACE " Z = " " Z="}
+{REPLACE "\nM117 Layer 4, Z=" "\nM600 E-2 L-300 X180 Y0 Z10; Layer 4, Z="}

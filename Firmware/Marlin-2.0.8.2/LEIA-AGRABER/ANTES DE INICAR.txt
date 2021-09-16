@@ -1,0 +1,28 @@
+ANTES DE COMEÇAR A COMPILAÇÃO DO MARLIN PARA SUA PLACA:
+ALTERE O ARQUIVO PLATFORMIO.INI SELECIONANDO O PROCESSADOR/PLACA QUE IRA UTILIZAR
+
+src_dir      = Marlin
+boards_dir   = buildroot/share/PlatformIO/boards
+#default_envs  = mega2560
+#default_envs = LPC1768
+#default_envs = mks_robin_nano35
+#default_envs = mks_robin_nano_v3_usb_flash_drive_msc
+include_dir  = Marlin
+
+BASTA RETIRAR O '#' DO PROCESSADOR/PLACA QUE ESTIVER USANDO.
+LEMBRANDO QUE:
+#default_envs = LPC1768
+SERVE TANTO PARA MKS SGenL V1, QUANTO PARA SKR 1.4
+
+FAÇA UMA BUSCA PELA PALAVRA 'AGRABER' NOS ARQUIVOS CONFIGURATION.h E CONFIGURATION_ADV.h
+E SIGA AS INTRUÇÕES QUE ESTÃO DESCRITAS NOS REFERIDOS ARQUIVOS.
+
+BOA SORTE,
+
+AC GUARDIA
+PROJETO AGRABER
+
+Atualizações recentes:
+https://drive.google.com/drive/folders/1RswjQ75ph_xBcViviVpR6QsXmGZnvQAv?usp=sharing
+Doações:
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=796WXGDTBEE9C

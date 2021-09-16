@@ -1,0 +1,11 @@
+G21 ; Set mm units
+G28 ; home all axes
+M420 S1 Z10 ;
+G1 X0 Y0 F5000
+G92 E0 ; zera extruder
+G1 Z1 F5000 ;
+G1 E15 F420 ;
+G92 E0 ; zera extruder
+G1 E-2  F1800 ;
+G1 Z8 F10000 ;
+G1 X0 Y20 Z0 F10000 ;

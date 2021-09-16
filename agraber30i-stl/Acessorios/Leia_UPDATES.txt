@@ -1,0 +1,9 @@
+30/05/2020
+Adicionados  novos arquivos:
+a. Suporte_Filamento_V2 = Peça para fixação na AGraber para permitir sustentar o carretel de filamento, versão 2;
+b. Trava_Filamento = Cone de fixação do filamento no respetivo suporte (item a), imprimir um par;
+c. Manipulo_Suporte_Filamento = Dispositivo de aperto para a Trava_Filamento (item b), imprimir um par;
+d. Gabarito_Y_80mm = Gabarito para fixação dos apoios de guias 8mm do eixo Y (ver Y_80mm.jpg);
+e. Gabarito_Z_76,5mm = Gabarito para ajuste de distanciamento dos perfís que compõem o eixo Z (ver Z_76,5mm.jpg);
+f. Suporte_Ramps_M5 = Peça (sem Brim)para fixação do conjunto Ramps + Arduino para uso de parafuso M5 e porca martelo;
+g. Suporte_Ramps_M5_Brim = Peça (comm Brim)para fixação do conjunto Ramps + Arduino para uso de parafuso M5 e porca martelo;

@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fdmmaterial version="1.3" xmlns="http://www.ultimaker.com/material" xmlns:cura="http://www.ultimaker.com/cura">
+  <metadata>
+    <name>
+      <brand>3DX</brand>
+      <material>ABS</material>
+      <color>Natural</color>
+      <label>ABS</label>
+    </name>
+    <GUID>c414def0-0db1-48f7-98ca-d0ef51080ad7</GUID>
+    <color_code>#ffff7f</color_code>
+    <version>7</version>
+    <description>3DX_ABS_Natural</description>
+    <adhesion_info>Use glue, to avoid chipping of the glass.</adhesion_info>
+  </metadata>
+  <properties>
+    <density>1.24</density>
+    <diameter>1.75</diameter>
+  </properties>
+  <settings>
+    <setting key="build volume temperature">36</setting>
+    <setting key="adhesion tendency">0</setting>
+    <setting key="heated bed temperature">105.0</setting>
+    <setting key="print temperature">230</setting>
+    <setting key="retraction speed">35.0</setting>
+    <setting key="surface energy">70</setting>
+    <setting key="print cooling">30.0</setting>
+    <setting key="standby temperature">200</setting>
+    <setting key="retraction amount">2.3</setting>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10s4" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr20" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_ender2" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_ender4" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10s" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="CreawsomeMod" product="creality_base" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10spro" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_ender3" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Cartesio bv" product="cartesio" />
+      <setting key="print temperature">255</setting>
+      <setting key="heated bed temperature">115</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="print cooling">0.0</setting>
+      <setting key="standby temperature">160</setting>
+      <hotend id="0.4mm thermoplastic extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.0</setting>
+      </hotend>
+      <hotend id="0.8mm thermoplastic extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.5</setting>
+      </hotend>
+      <hotend id="0.25mm thermoplastic extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.0</setting>
+      </hotend>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr20pro" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Kati Hal ARGE" product="kupido" />
+      <setting key="print temperature">250</setting>
+      <setting key="retraction amount">0.8</setting>
+      <setting key="heated bed temperature">70</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="print cooling">0.0</setting>
+      <setting key="standby temperature">160</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10s5" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10mini" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_ender5" />
+      <setting key="print temperature">240</setting>
+      <setting key="retraction amount">5</setting>
+      <setting key="heated bed temperature">80</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="print cooling">0</setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="MaukCC" product="hms434" />
+      <setting key="print temperature">255</setting>
+      <setting key="heated bed temperature">115</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="print cooling">0.0</setting>
+      <setting key="standby temperature">160</setting>
+      <hotend id="0.8mm TP extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.5</setting>
+      </hotend>
+      <hotend id="0.4mm TP extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.0</setting>
+      </hotend>
+      <hotend id="0.25mm TP extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.0</setting>
+      </hotend>
+    </machine>
+  </settings>
+</fdmmaterial>

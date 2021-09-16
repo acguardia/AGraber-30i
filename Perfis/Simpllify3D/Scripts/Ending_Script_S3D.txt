@@ -1,0 +1,10 @@
+M104 S0 ; Desliga o extrusor
+M140 S0 ; Desliga a mesa
+G1 E-3 F150 ; Retrai 3mm
+G91 ; Usar Coordenadas Relativas
+G1 Z1 F5000 ; Sobe o bico em 1.0mm;
+G90 ; Volta a usar Coordenadas Absolutas
+G28 X0 ; Move o carro X ao Home
+G1 Y195 ; Move o carro Y a frente
+M107 ; Desliga Blower Fan
+M84 ; Desabilita os Motores
