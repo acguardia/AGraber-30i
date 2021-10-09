@@ -1,7 +1,0 @@
-15/03/2020
-Adicionados  novos arquivos:
-a. Y_Indler_M4_624ZZ (_Brim) = Peça do eixo Y para uso de rolamento 624ZZ e parafuso de fixação M4;
-b. Y_Indler_M5_GT2 (Brim) = Peça do eixo Y para uso de polia GT2 de 20 dentes e parafuso de fixação M5;
-c. Trava_Nivelamento_Mesa = Peça para ser utilizada nos cantos do carro Y para travar as porcas M3 do parafuso de nivelamento da mesa;
-d. Y_Motor_Placa_EndStop = Peça desenhada para que se possa usar placa de endstop com 3 fios;
-d. Fixa_GT2_Y_Placa_EndStop = Peça a ser utilizada em conjunto com o Y_Motor_Placa_EndStop.

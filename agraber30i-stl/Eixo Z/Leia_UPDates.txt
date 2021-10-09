@@ -1,4 +1,0 @@
-13/08/2020
-Adicionados  novos arquivos:
-a. Z_Topo_Dir_V3 = Peça do eixo Z com aba para fixação na trave superior do frame;
-b. Z_Topo_Esq_V3 = Peça do eixo Z com aba para fixação na trave superior do frame;

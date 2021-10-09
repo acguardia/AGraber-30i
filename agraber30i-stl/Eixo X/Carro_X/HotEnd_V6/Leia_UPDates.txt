@@ -1,4 +1,0 @@
-28/07/2020
-Adicionados  novos arquivos:
-a. Peças_Carro_X_V6_Duplo = Peça do eixo X, o carro onde se apoia o hotend e extrusor para hotend E3D V6, divido em duas partes;
-b. Peças_Carro_X_V6_Duplo (BRIM) = Peça do eixo X, o carro onde se apoia o hotend e extrusor para hotend E3D V6, divido em duas partes e com BRIM;
