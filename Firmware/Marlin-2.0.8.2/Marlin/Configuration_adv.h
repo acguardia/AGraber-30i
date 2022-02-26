@@ -460,7 +460,7 @@
 * UTILIZE OS SEGUINTES PINOS NAS SEGUINTES PLACAS...
 * 
 * RAMPS         - CONTROLLER_FAN_PIN 6
-* MKS ROBIN E3D - PODE USAR O PINO PA2, MAS TEM QUE DESABILITAR O NEOPIXEL EM CONFIGURATION.H
+* MKS ROBIN E3D - NÃO SUPORTA NATIVAMENTE
 * ROBIN NANO V2 - NÃO SUPORTA NATIVAMENTE
 * ROBIN NANO V3 - CONTROLLER_FAN_PIN PB1
 * MKS SGEN L    - NÃO SUPORTA NATIVAMENTE
@@ -472,9 +472,9 @@
  * The fan turns on automatically whenever any driver is enabled and turns
  * off (or reduces to idle speed) shortly after drivers are turned off.
  */
-#define USE_CONTROLLER_FAN
+//#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
-  #define CONTROLLER_FAN_PIN PA2        // Set a custom pin for the controller fan
+  //#define CONTROLLER_FAN_PIN -1        // Set a custom pin for the controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY    // With this option only the Z axis is considered
   //#define CONTROLLER_FAN_IGNORE_Z      // Ignore Z stepper. Useful when stepper timeout is disabled.
   #define CONTROLLERFAN_SPEED_MIN      0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
@@ -544,7 +544,7 @@
 * PARA LIGAR AUTOMATICAMENTE O FAN DO HOTEND, UTILIZE OS SEGUINTES PINOS NAS SEGUINTES PLACAS...
 * 
 * RAMPS          - E0_AUTO_FAN_PIN 5
-* ROBIN E3D V1.1 - NÃO SUPORTA NATIVAMENTE
+* MKS ROBIN E3D - PODE USAR O PINO PA2, MAS TEM QUE DESABILITAR O NEOPIXEL EM CONFIGURATION.H
 * ROBIN NANO V2  - E0_AUTO_FAN_PIN PB0
 * ROBIN NANO V3  - E0_AUTO_FAN_PIN PB0
 * MKS SGEN L     - E0_AUTO_FAN_PIN P2_06
