@@ -869,7 +869,7 @@
  * Override with M203
  *                                       X,   Y,  Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 400, 400, 6, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 400, 400, 5, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
