@@ -124,7 +124,12 @@
 #define TEMP_BED_PIN                        PA1   // TB
 #define TEMP_0_PIN                          PA0   // TH1
 
-#define FIL_RUNOUT_PIN                      PB10  // MT_DET
+//#define FIL_RUNOUT_PIN                    PB10  // MT_DET
+
+//
+// POWER ON/OFF PIN
+//
+  #define PS_ON_PIN                         PB10 // PS_ON
 
 /**
  *                _____                                      _____                                     _____

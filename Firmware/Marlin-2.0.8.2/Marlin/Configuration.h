@@ -130,7 +130,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
 /**
@@ -140,12 +140,13 @@
  * 
  * ROBIN NANO V2 = SERIAL_PORT_2 1;
  * ROBIN NANO V3 = SERIAL_PORT_2 3;
+ * ROBIN E3 V1.1 = SERIAL_PORT_2 2
  * MKS SGENL V1  = SERIAL_PORT_2 0;
  * SKR 13        = SERIAL_PORT_2 0;
  * SKR 14        = SERIAL_PORT_2 0;
  * 
  */
-//#define SERIAL_PORT_2 0
+#define SERIAL_PORT_2 2
 //#define BAUDRATE_2 250000   // Enable to override BAUDRATE
 
 /**
@@ -168,7 +169,8 @@
 #ifndef MOTHERBOARD
   //#define MOTHERBOARD BOARD_RAMPS_14_EFB
   //#define MOTHERBOARD BOARD_MKS_SGEN_L
-  #define MOTHERBOARD BOARD_MKS_ROBIN_E3_V1_1
+  //#define MOTHERBOARD BOARD_MKS_ROBIN_E3   //MKS ROBIN E3 V1.0
+  #define MOTHERBOARD BOARD_MKS_ROBIN_E3_V1_1 //MKS ROBIN E3 V1.1
   //#define MOTHERBOARD BOARD_MKS_ROBIN_NANO_V2
   //#define MOTHERBOARD BOARD_MKS_ROBIN_NANO_V3
   //#define MOTHERBOARD BOARD_BTT_SKR_V1_3
@@ -356,11 +358,11 @@
  * Enable and connect the power supply to the PS_ON_PIN.
  * Specify whether the power supply is active HIGH or active LOW.
  */
-//#define PSU_CONTROL
+#define PSU_CONTROL
 #define PSU_NAME "Power Supply"
 
 #if ENABLED(PSU_CONTROL)
-  #define PSU_ACTIVE_STATE LOW      // Set 'LOW' for ATX, 'HIGH' for X-Box
+  #define PSU_ACTIVE_STATE  LOW     // Set 'LOW' for ATX, 'HIGH' for X-Box
 
   //#define PSU_DEFAULT_OFF         // Keep power off until enabled directly with M80
   //#define PSU_POWERUP_DELAY 250   // (ms) Delay for the PSU to warm up to full power
@@ -368,17 +370,17 @@
   //#define PSU_POWERUP_GCODE  "M355 S1"  // G-code to run after power-on (e.g., case light on)
   //#define PSU_POWEROFF_GCODE "M355 S0"  // G-code to run before power-off (e.g., case light off)
 
-  //#define AUTO_POWER_CONTROL      // Enable automatic control of the PS_ON pin
+  //#define AUTO_POWER_CONTROL        // Enable automatic control of the PS_ON pin
   #if ENABLED(AUTO_POWER_CONTROL)
     #define AUTO_POWER_FANS         // Turn on PSU if fans need power
     #define AUTO_POWER_E_FANS
     #define AUTO_POWER_CONTROLLERFAN
     #define AUTO_POWER_CHAMBER_FAN
     #define AUTO_POWER_COOLER_FAN
-    #define AUTO_POWER_E_TEMP        50 // (°C) Turn on PSU if any extruder is over this temperature
+    #define AUTO_POWER_E_TEMP          50 // (°C) Turn on PSU if any extruder is over this temperature
     //#define AUTO_POWER_CHAMBER_TEMP  30 // (°C) Turn on PSU if the chamber is over this temperature
     //#define AUTO_POWER_COOLER_TEMP   26 // (°C) Turn on PSU if the cooler is over this temperature
-    #define POWER_TIMEOUT             180 // (s) Turn off power if the machine is idle for this duration
+    #define POWER_TIMEOUT             600 // (s) Turn off power if the machine is idle for this duration
     #define POWER_OFF_DELAY            60 // (s) Delay of poweroff after M81 command. Useful to let fans run for extra time.
   #endif
 #endif
@@ -558,9 +560,9 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     // A.Graber
-  #define DEFAULT_Kp 19.43
-  #define DEFAULT_Ki  1.65
-  #define DEFAULT_Kd 57.3
+  #define DEFAULT_Kp 36.67  //19.43
+  #define DEFAULT_Ki  3.57  //1.65
+  #define DEFAULT_Kd 94.08  //57.3
   #endif
 #endif // PIDTEMP
 
@@ -600,9 +602,9 @@
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
   // Mesa A.Graber da JMP, via pid autotune
-  #define DEFAULT_bedKp 64.29
-  #define DEFAULT_bedKi  6.08
-  #define DEFAULT_bedKd 452.94
+  #define DEFAULT_bedKp 116.81 //64.29
+  #define DEFAULT_bedKi  20.24 //6.08
+  #define DEFAULT_bedKd 449.44 //452.94
   // FIND YOUR OWN: "M303 E-1 C8 S90 U1" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
 
@@ -760,7 +762,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -857,7 +859,7 @@
  * Override with M92
  *                                       X,  Y,   Z,   E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 2000, 83 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 83 }
 
 /**
 * AGRABER
@@ -867,11 +869,11 @@
  * Override with M203
  *                                       X,   Y,  Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 400, 400, 2, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 400, 400, 5, 25 }
 
-#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
+//#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 2, 50 } // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 8, 50 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -883,11 +885,11 @@
  * Override with M201
  *                                       X,   Y,   Z,    E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 600, 600, 75, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 600, 600, 100, 5000 }
 
-#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
+//#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 800, 800, 75, 7500 } // ...or, set your own edit limits
+  #define MAX_ACCEL_EDIT_VALUES       { 800, 800, 100, 7500 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -963,10 +965,10 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -983,7 +985,7 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-//#define Z_MIN_PROBE_PIN PB1    // Pin 32 is the RAMPS default
+#define Z_MIN_PROBE_PIN PB1    // Pin 32 is the RAMPS default
 
 /**
  * Probe Type
@@ -1021,13 +1023,13 @@
  **CASO ESTEJA UTILIZANDO BAL COM BLTOUCH, HABILITE APENAS A LINHA '#define BLTOUCH'.
  * Z Servo Probe, such as an endstop switch on a rotating arm.
  */
-#define Z_PROBE_SERVO_NR 0         // Defaults to SERVO 0 connector.
-#define Z_SERVO_ANGLES { 11, 120 } // Z Servo Deploy and Stow angles
+//#define Z_PROBE_SERVO_NR 0         // Defaults to SERVO 0 connector.
+//#define Z_SERVO_ANGLES { 11, 120 } // Z Servo Deploy and Stow angles
 
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH
+#define BLTOUCH
 
 /**
  * Touch-MI Probe by hotends.fr
@@ -1124,13 +1126,13 @@
 * AGRABER
 * HABILITE A LINHA ABAIXO CASO ESTEJA UTILIZANDO O BAL ORIGINAL DO PROJETO COM SERVO E MICROCHAVE:
 */
-#define NOZZLE_TO_PROBE_OFFSET { 10, -15, -1.50 }
+//#define NOZZLE_TO_PROBE_OFFSET { 10, -15, -1.50 }
 
 /*
 * AGRABER
 * HABILITE A LINHA ABAIXO CASO ESTEJA UTILIZANDO BLTOUCH COM CARRO E SUPORTE BLTOUCH ORIGINAIS DO PROJETO:
 */
-//#define NOZZLE_TO_PROBE_OFFSET { 35, -15, -3.40 }
+#define NOZZLE_TO_PROBE_OFFSET { 35, -5, -3.250 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1138,16 +1140,16 @@
 /*AGRABER
 * HABILITE A LINHA ABAIXO CASO ESTEJA UTILIZANDO O BAL ORIGINAL DO PROJETO COM SERVO E MICROCHAVE:
 */
-#define PROBING_MARGIN 5
+//#define PROBING_MARGIN 5
 
 /*
 * AGRABER
 * HABILITE A LINHA ABAIXO CASO ESTEJA UTILIZANDO BLTOUCH COM CARRO E SUPORTE BLTOUCH ORIGINAIS DO PROJETO:
 */
-//#define PROBING_MARGIN 25
+#define PROBING_MARGIN 25
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_FEEDRATE (50*60)
+#define XY_PROBE_FEEDRATE (80*60)
 
 /*
 * AGRABER
@@ -1156,7 +1158,7 @@
 *
 * Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 */	
-#define Z_PROBE_FEEDRATE_FAST (2*60)
+#define Z_PROBE_FEEDRATE_FAST (3*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
@@ -1324,7 +1326,7 @@
 
 // The size of the printable area
 #define X_BED_SIZE 210
-#define Y_BED_SIZE 210
+#define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1332,7 +1334,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 200
+#define Z_MAX_POS 225
 
 /**
  * Software Endstops
@@ -1698,7 +1700,7 @@
  
  * Homing speeds (mm/min)         X,       Y,       Z
 */
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (2*60) }
+#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (6*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -2383,7 +2385,7 @@
 //
 /*
 * AGRABER
-* ATENCAO - ESSE MODELO DE LCD NAO EH CONFIGURAVEL NAS PLACAS MKS ROBIN NANO V2 E V3.
+* ATENÇÃO - ESSE MODELO DE LCD NÃO É CONFIGURAVEL NAS PLACAS MKS ROBIN NANO V2 E V3.
 * FYSETC variant of the MINI12864 graphic controller with SD support
 * https://wiki.fysetc.com/Mini12864_Panel/
 */
@@ -2833,25 +2835,25 @@
 #if ENABLED(NEOPIXEL_LED)
   #define NEOPIXEL_TYPE   NEO_GRB  // NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
   #define NEOPIXEL_PIN     PA7     // LED driving pin
-  #define NEOPIXEL2_TYPE  NEO_GRB
-  #define NEOPIXEL2_PIN    PA2
+  //#define NEOPIXEL2_TYPE  NEO_GRB
+  //#define NEOPIXEL2_PIN    PA2
   #define NEOPIXEL_PIXELS  3       // Number of LEDs in the strip. (Longest strip when NEOPIXEL2_SEPARATE is disabled.)
   #define NEOPIXEL_IS_SEQUENTIAL   // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
   #define NEOPIXEL_BRIGHTNESS 150  // Initial brightness (0-255)
   //#define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
 
   // Support for second Adafruit NeoPixel LED driver controlled with M150 S1 ...
-  #define NEOPIXEL2_SEPARATE
+  //#define NEOPIXEL2_SEPARATE
   #if ENABLED(NEOPIXEL2_SEPARATE)
-    #define NEOPIXEL2_PIXELS      16  // Number of LEDs in the second strip
-    #define NEOPIXEL2_BRIGHTNESS  250  // Initial brightness (0-255)
+    #define NEOPIXEL2_PIXELS      12  // Number of LEDs in the second strip
+    #define NEOPIXEL2_BRIGHTNESS  255  // Initial brightness (0-255)
     #define NEOPIXEL2_STARTUP_TEST    // Cycle through colors at startup
   #else
    //#define NEOPIXEL2_INSERIES      // Default behavior is NeoPixel 2 in parallel
   #endif
 
   // Use some of the NeoPixel LEDs for static (background) lighting
-  //#define NEOPIXEL_BKGD_INDEX_FIRST  0              // Index of the first background LED
+  #define NEOPIXEL_BKGD_INDEX_FIRST  0              // Index of the first background LED
   //#define NEOPIXEL_BKGD_INDEX_LAST   0              // Index of the last background LED
   #define NEOPIXEL_BKGD_COLOR { 64, 128, 255, 0 }  // R, G, B, W
   #define NEOPIXEL_BKGD_ALWAYS_ON                   // Keep the backlight on when other NeoPixels are off
@@ -2892,15 +2894,15 @@
  * Set this manually if there are extra servos needing manual control.
  * Set to 0 to turn off servo support.
  */
-#define NUM_SERVOS 1 // Servo index starts with 0 for M280 command
+//#define NUM_SERVOS 1 // Servo index starts with 0 for M280 command
 
 // (ms) Delay  before the next move will start, to give the servo time to reach its target angle.
 // 300ms is a good value but you can try less delay.
 // If the servo can't reach the requested position, increase it.
-#define SERVO_DELAY { 600 }
+#define SERVO_DELAY { 300 }
 
 // Only power servos during movement, otherwise leave off to prevent jitter
-#define DEACTIVATE_SERVOS_AFTER_MOVE
+//#define DEACTIVATE_SERVOS_AFTER_MOVE
 
 // Edit servo angles with M281 and save to EEPROM with M500
-#define EDITABLE_SERVO_ANGLES
+//#define EDITABLE_SERVO_ANGLES
