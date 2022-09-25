@@ -6,3 +6,7 @@ Parâmetros:
 START = Temperatura inicial da impressão da torre
 STEP_DELTA = Variação de temperatura em cada 'bloco' da torre
 STEP_HEIGHT = Altura (mm) de cada 'bloco' de temperatura da torre
+
+Agradeciento especial aos membros do grupo de apoiadores do projeto:
+Salsicha Pires
+Odair Gonçalves
