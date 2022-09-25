@@ -1,0 +1,8 @@
+Inserir essa linha de comando no START G-CODE do Prusa Slicer:
+
+TUNING_TOWER COMMAND="SET_HEATER_TEMPERATURE HEATER=extruder" PARAMETER=TARGET START=235 STEP_DELTA=-5 STEP_HEIGHT=10
+
+Parâmetros:
+START = Temperatura inicial da impressão da torre
+STEP_DELTA = Variação de temperatura em cada 'bloco' da torre
+STEP_HEIGHT = Altura (mm) de cada 'bloco' de temperatura da torre
